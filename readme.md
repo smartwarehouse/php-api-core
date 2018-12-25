@@ -17,6 +17,13 @@ jika kamu hanya ingin generate key maka jalankan
 php artisan key:generate
 ` 
  
+**Generate Api**
+
+GENERATE Api Resource & Controller (api)
+
+php artisan make:controller API/Controller --api
+ 
+ 
 ###Release Log
 
 
