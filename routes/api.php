@@ -17,7 +17,12 @@ use Illuminate\Http\Request;
 | Url Endpoint http://localhost/api
 */
 Route::get('',function(){
-   return ['message' => 'This is endpoint for api'];
+   return [
+       'status'     => 'ok',
+       'code'       => 200,
+       'message'    => 'This is endpoint for api (*_*)',
+       'date_time'  => date('c')
+   ];
 });
 
 /*
@@ -27,6 +32,7 @@ Route::get('',function(){
 Route::group(['namespace' => 'API'], function () {
     Route::post('login', 'UserController@login');
     Route::post('register', 'UserController@register');
+
 
     Route::group(['middleware' => 'auth:api'], function(){
 
