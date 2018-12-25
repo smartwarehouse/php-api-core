@@ -2,7 +2,6 @@
 php-api-core adalah kodingan restapi untuk interaksi dari android ke server.
 
 ----
-
 ##Panduan Teknis
 
 Jalankan perintah dibawah ini jika ingin menginstall dan membuat key untuk laravel passport
@@ -19,11 +18,13 @@ php artisan key:generate
 
 -------
 
+ 
 ###Release Log
+
 **1.0.1**
 
 - Update
--
+- update
 -
 
 **0.1.0**
