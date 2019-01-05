@@ -23,13 +23,3 @@ GENERATE Api Resource & Controller (api)
 
 php artisan make:controller API/Controller --api
  
- 
-### Release Log
-
-**1.0.1**
-
-- Update
-- update
--
-
-**0.1.0**
