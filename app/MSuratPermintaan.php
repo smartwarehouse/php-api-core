@@ -20,7 +20,12 @@ class MSuratPermintaan extends Model
     public static function rules()
     {
         $rules = [
-            '' => 'required',
+            'nomor_surat'           => 'required',
+            'tanggal_surat'         => 'required|date',
+            'penanggung_jawab'      => 'required',
+            'id_vendor'             => 'required',
+            'tanggal_max'           => 'required|date',
+            'nama_vendor'           => 'required'
         ];
 
         return $rules;

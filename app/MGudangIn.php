@@ -21,7 +21,7 @@ class MGudangIn extends Model
     {
         $rules = [
             'id_suratpermintaan'    => 'required',
-            'tgl_masuk'             => 'required',
+            'tgl_masuk'             => 'required|date',
             'penerima_barang'       => 'required',
             'no_suratbukti'         => 'required',
             'kurir'                 => 'required'

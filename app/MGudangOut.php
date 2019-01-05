@@ -11,15 +11,21 @@ class MGudangOut extends Model
     protected $fillable = [
         'nomor_gudang',
         'tgl',
-        'id_permintaanunit'
+        'estimasi_pengiriman',
+        'id_permintaanunit',
+        'id_jeniskeluar',
+        'id_statuskirim'
     ];
 
     public static function rules()
     {
         $rules = [
-            'nomor_gudang'      => 'required',
-            'tgl'               => 'required',
-            'id_permintaanunit' => 'required',
+            'nomor_gudang'          => 'required',
+            'tgl'                   => 'required|date',
+            'estimasi_pengiriman'   => 'required',
+            'id_permintaanunit'     => 'required',
+            'id_jeniskeluar'        => 'required',
+            'id_statuskirim'        => 'required'
         ];
 
         return $rules;

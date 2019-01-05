@@ -11,7 +11,7 @@ class MSatuan extends Model
     protected $fillable = [
         'kode',
         'nama',
-        'deskripsi',
+        'deskripsi'
     ];
 
     public static function rule()
@@ -19,7 +19,7 @@ class MSatuan extends Model
         $rules = [
             'kode'          => 'required|unique:m-satuan',
             'nama'          => 'required',
-            'deskripsi'     => 'required'
+            'deskripsi'     => 'nullable'
         ];
 
         return $rules;

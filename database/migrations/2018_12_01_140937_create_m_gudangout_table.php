@@ -18,9 +18,16 @@ class CreateMGudangoutTable extends Migration
 
             $table->string('nomor_gudang');
             $table->date('tgl');
+            $table->dateTime('estimasi_pengiriman');
 
             $table->unsignedInteger('id_permintaanunit');
             $table->foreign('id_permintaanunit')->references('id')->on('m_permintaanunit');
+
+            $table->unsignedInteger('id_jeniskeluar');
+            $table->foreign('id_jeniskeluar')->references('id')->on('m_jeniskeluar');
+
+            $table->unsignedInteger('id_statuskirim');
+            $table->foreign('id_statuskirim')->references('id')->on('m_statuskirim');
 
             $table->timestamps();
         });

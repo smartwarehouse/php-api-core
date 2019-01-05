@@ -13,7 +13,8 @@ class MBarang extends Model
         'nama',
         'kode',
         'kelompok',
-        'id_satuan'
+        'id_satuan',
+        'id_gudang'
     ];
 
     public static function rules()
@@ -23,6 +24,7 @@ class MBarang extends Model
             'kode'          => 'required|unique:m_barang',
             'kelompok'      => 'required',
             'id_satuan'     => 'required',
+            'id_gudang'     => 'required'
         ];
 
         return $rules;

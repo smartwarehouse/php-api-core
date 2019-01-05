@@ -11,7 +11,7 @@ class MPermintaanUnitDetail extends Model
     protected $fillable = [
         'id_permintaanunit',
         'id_barang',
-        'jumlah',
+        'jumlah'
     ];
 
     public static function rules()
@@ -19,7 +19,7 @@ class MPermintaanUnitDetail extends Model
         $rules = [
             'id_permintaanunit'     => 'required',
             'id_barang'             => 'required',
-            'jumlah'                => 'required',
+            'jumlah'                => 'required'
         ];
 
         return $rules;

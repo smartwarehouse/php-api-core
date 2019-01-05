@@ -4,22 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MVendor extends Model
+class MJenisKeluar extends Model
 {
-    protected $table = 'm_vendor';
+
+    protected $table = 'm_jenis_keluar';
 
     protected $fillable = [
         'nama',
-        'alamat',
-        'telp'
+        'deskripsi'
     ];
 
     public static function rules()
     {
         $rules = [
-            'nama'      => 'required',
-            'alamat'    => 'required',
-            'telp'      => 'required'
+            'nama'            => 'required',
+            'deskripsi'       => 'nullable'
         ];
 
         return $rules;

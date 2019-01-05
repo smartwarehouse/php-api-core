@@ -19,7 +19,7 @@ class MGudangInDetail extends Model
         $rules = [
             'id_barang'     => 'required',
             'id_gudangin'   => 'required',
-            'jumlah'        => 'required',
+            'jumlah'        => 'required'
         ];
 
         return $rules;
