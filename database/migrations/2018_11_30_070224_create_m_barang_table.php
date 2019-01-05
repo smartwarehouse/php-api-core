@@ -22,6 +22,9 @@ class CreateMBarangTable extends Migration
             $table->unsignedInteger('id_satuan');
             $table->foreign('id_satuan')->references('id')->on('m_satuan');
 
+            $table->unsignedInteger('id_gudang');
+            $table->foreign('id_gudang')->references('id')->on('m_gudang');
+
             $table->timestamps();
         });
     }

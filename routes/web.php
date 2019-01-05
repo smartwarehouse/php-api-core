@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function () {
-    return 'Semuanya berjalan dengan baik :) ';
-//    return view('welcome');
+    return view('welcome');
 });
 
  Auth::routes();
