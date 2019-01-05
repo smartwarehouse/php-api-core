@@ -1,14 +1,5 @@
 <?php
-
 use Illuminate\Http\Request;
-
-
-/*
-| Url Endpoint --> http://localhost/api
-| Semua request harus memakai header body untuk mendapatkan return json
-| 'Accept': 'application/json',
-| 'Content-Type': 'application/json',
-*/
 
 Route::get('',function(){
    return [
@@ -19,10 +10,6 @@ Route::get('',function(){
    ];
 });
 
-/*
-| ROUTING GROUP API
-| DENGAN NAMESPACE API
-*/
 Route::group(['namespace' => 'API'], function () {
     Route::post('login', 'UserController@login');
     Route::post('register', 'UserController@register');
