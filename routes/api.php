@@ -26,6 +26,14 @@ Route::group(['namespace' => 'API'], function () {
             'suratpermintaan'           => 'SuratPermintaanController',
             'suratpermintaan-detail'    => 'SuratPermintaanDetailController',
             'vendor'                    => 'VendorController',
+
+
+            'gudang'                    => 'GudangController',
+            'gudangout-detail'          => 'GudangOutDetailController',
+            'jeniskeluar'               => 'JenisKeluarController',
+            'jenisgudang'               => 'JenisGudangController',
+            'statuskirim'               => 'StatusKirimController',
+            'surat'                     => 'SuratController',
         ]);
     });
 });
