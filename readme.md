@@ -21,5 +21,7 @@ php artisan key:generate
 
 GENERATE Api Resource & Controller (api)
 
+`
 php artisan make:controller API/Controller --api
+`
  
