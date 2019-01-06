@@ -9,6 +9,10 @@ Jalankan perintah dibawah ini jika ingin menginstall dan membuat key untuk larav
 
 `
 php artisan passport:install
+
+php artisan passport:client --personal
+
+
 `
 
 jika kamu hanya ingin generate key maka jalankan

@@ -30,9 +30,9 @@ Route::group(['namespace' => 'API'], function () {
 
             'gudang'                    => 'GudangController',
             'gudangout-detail'          => 'GudangOutDetailController',
-            'jeniskeluar'               => 'JenisKeluarController',
-            'jenisgudang'               => 'JenisGudangController',
-            'statuskirim'               => 'StatusKirimController',
+            'jenis-keluar'               => 'JenisKeluarController',
+            'jenis-gudang'               => 'JenisGudangController',
+            'status-kirim'               => 'StatusKirimController',
             'surat'                     => 'SuratController',
         ]);
     });

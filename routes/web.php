@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/carbon', function () {
+    $result = \Carbon\Carbon::now()->subMonth();
+    echo $result;
+});
+
+Route::get('/template/input', function () {
+    return view('dashboard.input');
+});
+
  Auth::routes();
 
  Route::get('/home', 'HomeController@index')->name('home');
