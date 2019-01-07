@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="images/favicon.png">
-    <title>Dashboard</title>
+    <title>Dashboard - @yield('title')</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900%7CMaterial+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('asset/css/materialize.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/loaders.html')}}">
@@ -70,6 +70,7 @@
 </head>
 
 <body class="animsition">
+
 <div class="wrapper-load">
     <div class="preloader-wrapper medium-size active">
         <div class="spinner-layer spinner-custom">
@@ -85,23 +86,26 @@
         </div>
     </div>
 </div>
-<div class="navbar navbar-home">
+
+
+<div class="navbar navbar-pages">
     <div class="container">
-        <div class="row">
-            <div class="col s3">
-                <div class="content-left"><a href="#slide-out" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content-center"><a href="index-2.html"><h1>DASHBOARD</h1></a>
-                </div>
-            </div>
-            <div class="col s3">
-                <div class="content-right"><a href="#slide-out-right" data-target="slide-out-right" class="sidenav-trigger"><i class="fa fa-cog"></i></a>
-                </div>
-            </div>
+        <div class="content">
+            <h4><a href="{{route('dashboard')}}"><i class="fa fa-arrow-left waves-effect waves-light-grey"></i></a> @yield('title')</h4>
         </div>
     </div>
 </div>
 
-@include('dashboard.layout.sidebar')
+@if (\Session::has('notification'))
+    <div class="quotes segments-page" style="margin-bottom: -100px">
+        <div class="container">
+            <div class="content one-q">
+                <span>{{ \Session::get('notification') }}</span>
+            </div>
+        </div>
+    </div>
+@endif
+
+@yield('content')
+
+@include('dashboard.layout.footer')

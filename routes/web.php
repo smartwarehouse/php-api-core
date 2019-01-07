@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,19 +16,15 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'dashboard'], function () {
+
     Route::get('/', function () {
         return view('dashboard.index');
-    });
+    })->name('dashboard');
 
     Route::group(['prefix' => 'jenis-gudang'], function () {
-
-        Route::get('/', function () {
-            return view('dashboard.index');
-        });
-
-        Route::get('/', function () {
-            return view('dashboard.index');
-        });
+        Route::get('/','JenisGudangController@index')->name('jenisgudang');
+        Route::get('/add','JenisGudangController@create');
+        Route::post('/','JenisGudangController@store')->name('jenisgudangadd');
     });
 });
  
