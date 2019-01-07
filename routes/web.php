@@ -15,15 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/carbon', function () {
-    $result = \Carbon\Carbon::now()->subMonth();
-    echo $result;
+
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', function () {
+        return view('dashboard.index');
+    });
+
+    Route::group(['prefix' => 'jenis-gudang'], function () {
+
+        Route::get('/', function () {
+            return view('dashboard.index');
+        });
+
+        Route::get('/', function () {
+            return view('dashboard.index');
+        });
+    });
 });
+ 
+Auth::routes();
 
-Route::get('/template/input', function () {
-    return view('dashboard.input');
-});
-
- Auth::routes();
-
- Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
