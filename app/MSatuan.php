@@ -14,10 +14,10 @@ class MSatuan extends Model
         'deskripsi'
     ];
 
-    public static function rule()
+    public static function rules()
     {
         $rules = [
-            'kode'          => 'required|unique:m-satuan',
+            'kode'          => 'required|unique:m_satuan',
             'nama'          => 'required',
             'deskripsi'     => 'nullable'
         ];

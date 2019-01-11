@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class MStatusKirim extends Model
 {
 
-    protected $table = 'm_status_kirim';
+    protected $table = 'm_statuskirim';
 
     protected $fillable = [
         'kode',

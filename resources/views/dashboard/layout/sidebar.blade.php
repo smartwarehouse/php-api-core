@@ -5,9 +5,11 @@
                 <div class="background">
                     <img src="images/bg-user.jpg" alt="">
                 </div>
-                <img class="circle responsive-img" src="images/profile.png" alt=""><span class="white-text name">Orang Tamvan</span>
+                <img class="circle responsive-img" src="images/profile.png" alt=""><span class="white-text name">{{{ Auth::user()->name }}}
+</span>
             </div>
         </li>
+        <!--
         <li><a href="home-pages.html"><i class="fa fa-home"></i>Home</a>
         </li>
         <li><a href="element-list.html"><i class="fa fa-sliders"></i>Report</a>
@@ -23,6 +25,18 @@
         <li><a href="main-features.html"><i class="fa fa-support"></i>Permintaan</a>
         </li>
         <li><a href="main-features.html"><i class="fa fa-support"></i>Status Kirim</a>
+        </li>
+        -->
+        <li>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </li>
     </ul>
 </div>

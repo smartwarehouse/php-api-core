@@ -105,101 +105,29 @@
 
 @include('dashboard.layout.sidebar')
 
-<div class="slide">
-    <div class="slide-show-home owl-carousel owl-theme">
-        <div class="slide-content">
-            <div class="mask"></div>
-            <img src="images/slider-home1.jpg" alt="">
-            <div class="intro-caption">
-                <h2>Welcome to Eleco</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, quos?</p>
-            </div>
-        </div>
-        <div class="slide-content">
-            <div class="mask"></div>
-            <img src="images/slider-home2.jpg" alt="">
-            <div class="intro-caption">
-                <h2>Powerfull Design</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, quos?</p>
-            </div>
-        </div>
-        <div class="slide-content">
-            <div class="mask"></div>
-            <img src="images/slider-home3.jpg" alt="">
-            <div class="intro-caption">
-                <h2>Easy Customize</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, quos?</p>
-            </div>
-        </div>
-    </div>
+<div class="features-home segments">
 </div>
 
 <div class="filter-home segments">
     <div class="container">
         <div class="row">
             <div class="col s4">
-                <a href="home-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-home"></i>
-                        <h6>Report</h6>
+                <a href="{{route('jenisgudang')}}">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-building"></i>
+                        <h6>Jenis Gudang</h6>
                     </div>
                 </a>
             </div>
             <div class="col s4">
-                <a href="element-list.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-sliders"></i>
-                        <h6>Stok Barang</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col s4">
-                <a href="pages-list.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-clone"></i>
+                <a href="{{route('gudang')}}">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-archive"></i>
                         <h6>Gudang</h6>
                     </div>
                 </a>
             </div>
-        </div>
-        <div class="row">
             <div class="col s4">
-                <a href="shop-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-shopping-cart"></i>
-                        <h6>Pengguna</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col s4">
-                <a href="apps.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-mobile"></i>
-                        <h6>Vendor</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col s4">
-                <a href="blog-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-rss"></i>
-                        <h6>Request</h6>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s4">
-                <a href="shop-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-shopping-cart"></i>
-                        <h6>Permintaan</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col s4">
-                <a href="apps.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-mobile"></i>
-                        <h6>Surat</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col s4">
-                <a href="blog-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-rss"></i>
+                <a href="{{route('satuan')}}">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-balance-scale"></i>
                         <h6>Satuan</h6>
                     </div>
                 </a>
@@ -207,109 +135,54 @@
         </div>
         <div class="row">
             <div class="col s4">
-                <a href="shop-pages.html">
+                <a href="{{ route('pengguna') }}">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-users"></i>
+                        <h6>Pengguna</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col s4">
+                <a href="{{ route('vendor') }}">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-bank"></i>
+                        <h6>Vendor</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col s4">
+                <a href="{{ route('statuskirim') }}">
                     <div class="content waves-effect waves-light b-shadow"><i class="fa fa-shopping-cart"></i>
                         <h6>Status Kirim</h6>
                     </div>
                 </a>
             </div>
+        </div>
+        <div class="row">
             <div class="col s4">
-                <a href="apps.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-mobile"></i>
-                        <h6>Jenis Keluar</h6>
+                <a href="#">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-shopping-cart"></i>
+                        <h6>Permintaan</h6>
                     </div>
                 </a>
             </div>
             <div class="col s4">
-                <a href="blog-pages.html">
-                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-rss"></i>
-                        <h6>Jenis Gudang</h6>
+                <a href="#">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-envelope"></i>
+                        <h6>Surat Keluar</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col s4">
+                <a href="#">
+                    <div class="content waves-effect waves-light b-shadow"><i class="fa fa-plus"></i>
+                        <h6>Request Lebih</h6>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 </div>
+
 <div class="features-home segments">
-    <div class="container">
-        <div class="section-title">
-            <h3>Features</h3>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-edit"></i>Easy to Edit</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-clone"></i>Clean</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-heart"></i>Awesome</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-shopping-cart"></i>Shop</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-rss"></i>Blog</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-newspaper-o"></i>News</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-image"></i>Portfolio</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-tint"></i>Splash</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-star"></i>Walkthrough</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-th-list"></i>Accordion</h6>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-support"></i>Badges</h6>
-                </div>
-            </div>
-            <div class="col s6">
-                <div class="content b-shadow">
-                    <h6><i class="fa fa-toggle-on"></i>Button</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="more-features"><a href="main-features.html">More <span>Eleco</span> Featuers <i class="fa fa-arrow-right"></i></a>
-    </div>
 </div>
 
 @include('dashboard.layout.footer')

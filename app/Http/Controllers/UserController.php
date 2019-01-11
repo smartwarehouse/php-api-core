@@ -1,11 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use App\MJenisGudang;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
-class JenisGudangController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class JenisGudangController extends Controller
      */
     public function index()
     {
-        $result = MJenisGudang::all();
-        return view('dashboard.jenisgudang.list',['data'=>$result]);
+        $result = User::all();
+        return view('dashboard.pengguna.list',['data' => $result]);
     }
 
     /**
@@ -25,7 +27,7 @@ class JenisGudangController extends Controller
      */
     public function create()
     {
-        return view('dashboard.jenisgudang.add');
+        return view('dashboard.pengguna.add');
     }
 
     /**
@@ -36,29 +38,38 @@ class JenisGudangController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),MJenisGudang::rules());
+        $validator = Validator::make($request->all(), [
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'role'          => 'required',
+            'password'      => 'required',
+        ]);
 
         if ($validator->fails()) {
             $message = 'Data Gagal ditambahkan, Sepertinya ada form yang masih belum kamu isi.';
         }
 
+        $input              = $request->all();
+        $input['password']  = Hash::make($input['password']);
+
         try{
-            MJenisGudang::create($request->all());
+            User::create($input);
             $message = 'Data Berhasil di tambahkan';
         }catch (\Exception $exception){
             $message = 'Data Gagal ditambahkan, Sepertinya ada form yang masih belum kamu isi.';
         }
 
-        return redirect()->route('jenisgudang')->with('notification',$message);
+        return redirect()->route('pengguna')->with('notification',$message);
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\MJenisGudang  $mJenisGudang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(MJenisGudang $mJenisGudang)
+    public function show($id)
     {
         //
     }
@@ -66,10 +77,10 @@ class JenisGudangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\MJenisGudang  $mJenisGudang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MJenisGudang $mJenisGudang)
+    public function edit($id)
     {
         //
     }
@@ -78,10 +89,10 @@ class JenisGudangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MJenisGudang  $mJenisGudang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MJenisGudang $mJenisGudang)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -89,10 +100,10 @@ class JenisGudangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\MJenisGudang  $mJenisGudang
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MJenisGudang $mJenisGudang)
+    public function destroy($id)
     {
         //
     }

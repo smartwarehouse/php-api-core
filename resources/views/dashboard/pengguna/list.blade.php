@@ -1,6 +1,6 @@
 @extends('dashboard.layout.app')
 
-@section('title', 'Jenis Gudang')
+@section('title', 'Pengguna')
 
 @section('content')
 
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col s12">
                     <div class="contents">
-                        <a href="{{route('jenisgudangform')}}"><button class="button waves-effect button-full blue b-shadow">Tambah</button></a>
+                        <a href="{{route('penggunaform')}}"><button class="button waves-effect button-full blue b-shadow">Tambah</button></a>
                     </div>
                 </div>
             </div>
@@ -22,15 +22,17 @@
                     <tr>
                         <th>Id</th>
                         <th>Nama</th>
-                        <th>Deskripsi</th>
+                        <th>Email</th>
+                        <th>Role</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($data as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->deskripsi }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->role }}</td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\DB;
 class BarangStatistikController extends Controller
 {
     public function barangStok(){
-        $m_barang_in = DB::table('m_barang')->join('m_gudangin_detail','m_gudangin_detail.id_barang','=','m_barang.id')
+        $m_barang_in = DB::table('m_barang')
+            ->join('m_gudangin_detail','m_gudangin_detail.id_barang','=','m_barang.id')
             ->join('m_gudangin','m_gudangin.id','=','m_gudangin_detail.id_gudangin')
             ->select('m_barang.id as mbarangin_id','m_barang.nama as mbarang_nama','m_gudangin.id as mgudangin_id', DB::raw('sum(m_gudangin_detail.jumlah) as totalin'))
             ->groupBy('m_barang.id');
 
-        $result = DB::table('m_barang')->join('m_gudangout_detail','m_gudangout_detail.id_barang','=','m_barang.id')
+        $result = DB::table('m_barang')
+            ->join('m_gudangout_detail','m_gudangout_detail.id_barang','=','m_barang.id')
             ->join('m_gudangout','m_gudangout.id','=','m_gudangout_detail.id_gudangout')
             ->select('m_barang.id as mbarangout_id','m_barang.nama as mbarang_nama','m_gudangout.id as mgudangout_id', DB::raw('sum(m_gudangout_detail.jumlah) as totalout'))
             ->groupBy('m_barang.id')
